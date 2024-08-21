@@ -1,0 +1,32 @@
+#define PIR_PIN 22
+#define LED_PIN 23
+
+void setup() {
+  // Initialize the PIR sensor pin as input
+  pinMode(PIR_PIN, INPUT);
+  
+  // Initialize the LED pin as output
+  pinMode(LED_PIN, OUTPUT);
+  
+  // Start serial communication
+  Serial.begin(115200);
+}
+
+void loop() {
+  // Read the state of the simulated PIR sensor
+  int motionDetected = digitalRead(PIR_PIN);
+  
+  // If motion is detected, turn on the LED
+  if (motionDetected == HIGH) {
+    digitalWrite(LED_PIN, HIGH);
+    Serial.println("Motion detected!");
+  } 
+  // If no motion is detected, turn off the LED
+  else {
+    digitalWrite(LED_PIN, LOW);
+    Serial.println("No motion.");
+  }
+  
+  // Short delay to prevent flooding the serial monitor
+  delay(100);
+}
