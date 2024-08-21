@@ -1,0 +1,13 @@
+Breif about the project:
+THE PIR (Motion sensor) and LED is connected to the ESP32, when the motion sensor detects motion the LED wil turn on and vise versa
+
+Connection:
+PIR: 
+    VCC: connected to the 3V3 pin in the ESP32
+    Signal pin: connected to pin 22 in the ESP32
+    GND: connected to GND in the ESP32
+
+LED:
+    Anode: connected to pin 23 in the ESP32
+    Cathode: connected to GND in the ESP32
+
